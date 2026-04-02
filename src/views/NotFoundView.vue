@@ -1,0 +1,1 @@
+<template><main><h2>404 — Pàgina no trobada</h2></main></template>

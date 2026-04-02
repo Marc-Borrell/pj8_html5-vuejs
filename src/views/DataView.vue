@@ -1,0 +1,1 @@
+<template><main><p>Dades — pròximament</p></main></template>
