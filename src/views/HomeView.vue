@@ -27,14 +27,11 @@ const chartColor = computed(() => colorMap[store.selectedDistribution])
           Els punts d'inflexió són llindars del sistema climàtic on petits canvis
           poden desencadenar transformacions grans i irreversibles.
         </p>
-        <div class="hero-links">
-          <RouterLink :to="{ name: 'tipping-points' }" class="btn-primary">
-            Explora els punts
-          </RouterLink>
-          <RouterLink :to="{ name: 'data' }" class="btn-secondary">
-            Veure dades
-          </RouterLink>
-        </div>
+        <nav class="hero-nav">
+        <RouterLink :to="{ name: 'home' }">Inici</RouterLink>
+        <span class="divider">|</span>
+        <RouterLink :to="{ name: 'about' }">Sobre</RouterLink>
+      </nav>
       </div>
 
       <!-- Histograma + controls -->
@@ -115,20 +112,27 @@ const chartColor = computed(() => colorMap[store.selectedDistribution])
   gap: 1rem;
   flex-wrap: wrap;
 }
-.btn-primary {
-  background: #10b981;
-  color: #000;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
+.hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
-.btn-secondary {
-  border: 1px solid #374151;
-  color: #e5e7eb;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+
+.hero-nav a {
+  color: #9ca3af;
   text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.hero-nav a:hover,
+.hero-nav a.router-link-exact-active {
+  color: #10b981;
+}
+
+.divider {
+  color: #374151;
 }
 .chart-hint {
   font-size: 0.75rem;
