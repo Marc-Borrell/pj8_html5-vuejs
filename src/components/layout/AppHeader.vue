@@ -3,37 +3,39 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <header class="app-header">
-    <img alt="Vue logo" src="@/assets/earth.svg" width="60" height="60" />
-    <span class="title">Punts d'Inflexió</span>
-    <nav>
-      <RouterLink :to="{ name: 'home' }">Casa</RouterLink>
-      <RouterLink :to="{ name: 'about' }">Sobre</RouterLink>
-    </nav>
-  </header>
+  <nav class="top-nav">
+    <RouterLink :to="{ name: 'home' }">Inici</RouterLink>
+    <RouterLink :to="{ name: 'tipping-points' }">Punts d'Inflexió</RouterLink>
+    <RouterLink :to="{ name: 'data' }">Dades</RouterLink>
+  </nav>
 </template>
 
 <style scoped>
-.app-header {
+.top-nav {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
+  justify-content: flex-end;
+  gap: 0.5rem;
+  background: #0d1117;
+  border-bottom: 1px solid #1f2937;
+  width: 100%;
+  padding: 0 2rem;
 }
-.title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--color-heading);
-  flex: 1;
-}
-nav a {
-  margin-left: 1rem;
-  color: var(--color-text);
+
+.top-nav a {
+  padding: 0.75rem 1.25rem;
+  color: #9ca3af;
   text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
 }
-nav a.router-link-exact-active {
+
+.top-nav a:hover {
+  color: #e5e7eb;
+}
+
+.top-nav a.router-link-active {
   color: #10b981;
+  border-bottom-color: #10b981;
 }
 </style>
